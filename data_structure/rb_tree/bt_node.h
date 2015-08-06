@@ -1,12 +1,16 @@
-class bt_node {
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdexcept>
+
+class bt_node{
     public:
-    enum rb_color {red, black};
+    enum color {red, black};
+    color c;
     int v;
-    rb_color c;
     bt_node *p, *l, *r;
 
-    bt_node (const int value = 0, const rb_color cl = black):p(NULL), l(NULL), r(NULL){
-	v = value;
+    bt_node (const int val = 0, const color cl = black):p(NULL), l(NULL), r(NULL){
+	v = val;
 	c = cl;
     }
 

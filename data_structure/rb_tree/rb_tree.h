@@ -5,37 +5,32 @@
 #include "./bt_node.h"
 
 class rb_tree {
-    private:
-    bt_node* nil;
     public:
-    bt_node* root;
+    bt_node *root;
+    private:
+    bt_node *nil;
 
-    rb_tree (const bt_node* r = NULL){
+    public:
+    rb_tree (const rb_tree *t = NULL){
 	nil = new bt_node();
-	if (NULL  == r){
-	    root = nil;
-	    return;
+	if (t == NULL){
+	    root = nil; return;
 	}
-	root = new bt_node (r->v, bt_node::black);
-	root->p = root->l = root->r = nil;
+	_copy(nil, root, t->root, t->nil);
     }
 
-    rb_tree (const rb_tree &t){
-	nil = new bt_node();
-	copy (nil, root, t.root, t.nil);
-    }
-
-    ~rb_tree () {
-	destroy (root);
+    ~rb_tree (){
+	if (root != nil){
+	    _destroy (root);
+	}
 	delete nil;
-    }
-
-    void pre_order (){
-	_pre_order (root);
     }
 
     void mid_order (){
 	_mid_order (root);
+    }
+    void pre_order (){
+	_pre_order (root);
     }
 
     bt_node* minimum (bt_node* n){ 
@@ -113,22 +108,28 @@ class rb_tree {
     }
 
     private:
-    void copy (bt_node* prt, bt_node* &crt, const bt_node *src, const bt_node* snil){
-	if (src == snil){
-	    crt = nil;
-	    return;
+    void _copy (bt_node* prt, bt_node* &crt, const bt_node* t_r, const bt_node* t_n){
+	if (t_r == t_n){
+	    crt = nil; return;
 	}
-	crt = new bt_node (*src);
+	crt = new bt_node (*t_r);
 	crt->p = prt;
-	copy (crt, crt->l, src->l, snil);
-	copy (crt, crt->r, src->r, snil);
+	_copy (crt, crt->l, t_r->l, t_n);
+	_copy (crt, crt->r, t_r->r, t_n);
     }
 
-    void destroy (bt_node* n){
+    void _destroy (bt_node* crt){
+	if (crt == nil) {return;}
+	_destroy (crt->l);
+	_destroy (crt->r);
+	delete crt;
+    }
+
+    void _mid_order (const bt_node *n){
 	if (n == nil) {return;}
-	destroy (n->l);
-	destroy (n->r);
-	delete n;
+	_mid_order(n->l);
+	printf ("%d[%s],", n->v, (n->c == bt_node::red?"red":"black"));
+	_mid_order (n->r);
     }
 
     void _pre_order (const bt_node* n){
@@ -136,13 +137,6 @@ class rb_tree {
 	printf ("%d[%s],", n->v, (n->c == bt_node::red)? "red" :"black");
 	_pre_order (n->l);
 	_pre_order (n->r);
-    }
-
-    void _mid_order (const bt_node* n){
-	if (n == nil) {return;}
-	_mid_order (n->l);
-	printf ("%d[%s],", n->v, (n->c == bt_node::red)? "red": "black");
-	_mid_order (n->r);
     }
 
     void remove_fixup (bt_node* node){

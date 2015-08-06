@@ -8,16 +8,20 @@ void finalize_print (){
 
 int main (int argc, char* argv[]){
     bt_node *root = new bt_node(0, bt_node::black);
-    int max = 13;
-
-    rb_tree *tree = new rb_tree (root);
+    rb_tree *t = new rb_tree();
+    t->insert (*root);
     delete root;
+
+    rb_tree *tree = new rb_tree (t);
+    delete t;
     printf ("================================================================================\n");
     tree->pre_order();
     finalize_print ();
     tree->mid_order();
     finalize_print ();
+    
     printf ("================================================================================\n");
+    int max = 13;
     for (int i = 1; i<= max; i+=1){
     bt_node* temp = new bt_node (i);
     tree->insert(*temp);
