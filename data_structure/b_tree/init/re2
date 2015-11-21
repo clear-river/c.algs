@@ -1,0 +1,162 @@
+min_degree=2;
+capacity=3;size=3;
+keys[0]=15;
+keys[1]=31;
+keys[2]=47;
+children[0]=3
+children[1]=19
+children[2]=35
+children[3]=51
+
+	min_degree=2;
+	capacity=3;size=3;
+	keys[0]=3;
+	keys[1]=7;
+	keys[2]=11;
+	children[0]=0
+	children[1]=4
+	children[2]=8
+	children[3]=12
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=0;
+		keys[1]=1;
+		keys[2]=2;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=4;
+		keys[1]=5;
+		keys[2]=6;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=8;
+		keys[1]=9;
+		keys[2]=10;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=12;
+		keys[1]=13;
+		keys[2]=14;
+		#Leaf node.
+
+	min_degree=2;
+	capacity=3;size=3;
+	keys[0]=19;
+	keys[1]=23;
+	keys[2]=27;
+	children[0]=16
+	children[1]=20
+	children[2]=24
+	children[3]=28
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=16;
+		keys[1]=17;
+		keys[2]=18;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=20;
+		keys[1]=21;
+		keys[2]=22;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=24;
+		keys[1]=25;
+		keys[2]=26;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=28;
+		keys[1]=29;
+		keys[2]=30;
+		#Leaf node.
+
+	min_degree=2;
+	capacity=3;size=3;
+	keys[0]=35;
+	keys[1]=39;
+	keys[2]=43;
+	children[0]=32
+	children[1]=36
+	children[2]=40
+	children[3]=44
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=32;
+		keys[1]=33;
+		keys[2]=34;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=36;
+		keys[1]=37;
+		keys[2]=38;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=40;
+		keys[1]=41;
+		keys[2]=42;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=44;
+		keys[1]=45;
+		keys[2]=46;
+		#Leaf node.
+
+	min_degree=2;
+	capacity=3;size=3;
+	keys[0]=51;
+	keys[1]=55;
+	keys[2]=59;
+	children[0]=48
+	children[1]=52
+	children[2]=56
+	children[3]=60
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=48;
+		keys[1]=49;
+		keys[2]=50;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=52;
+		keys[1]=53;
+		keys[2]=54;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=56;
+		keys[1]=57;
+		keys[2]=58;
+		#Leaf node.
+
+		min_degree=2;
+		capacity=3;size=3;
+		keys[0]=60;
+		keys[1]=61;
+		keys[2]=62;
+		#Leaf node.
+

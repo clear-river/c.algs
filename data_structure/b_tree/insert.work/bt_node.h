@@ -10,15 +10,6 @@
 //typedef unsigned int _uint;
 typedef int _uint;
 
-int bisearch (int* d, int s, int e, int t){
-    if (s>e) {return s;}
-    int m = (s+e) >> 1;
-    if (t == d[m]){
-	return m;
-    }
-    return (t<d[m])? bisearch (d, s, m-1, t): bisearch (d, m+1, e, t);
-}
-
 class bt_node{
     public:
     _uint min_degree, capacity;
@@ -36,10 +27,6 @@ class bt_node{
     ~bt_node (){
         if (keys) {free (keys);}
         if (children) {free (children);}
-    }
-
-    int find (int key){
-	return bisearch (keys, 0, size-1, key);
     }
 
     std::vector<std::string> dump_content () const {

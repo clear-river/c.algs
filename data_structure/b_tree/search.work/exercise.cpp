@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
     b_tree *tree = new b_tree(2);
     bt_node* target = NULL;
     init_tree (tree);
-    //tree->dump_tree();
+    tree->dump_tree();
 
     _uint i = 0;
     target = tree->search(26, &i);
@@ -60,6 +60,7 @@ int main(int argc, char* argv[]){
     }else{
 	printf("%u not found.\n", 29);
     }
+    delete tree; exit (0);
 
     /*target = tree->root->children[0];
     tree->destroy (target->children[2]);
@@ -75,10 +76,6 @@ int main(int argc, char* argv[]){
     printf("41 insertion started.\n");
     tree->insert(41);
     printf("41 insertion complete.\n");
-    tree->dump_tree();
-    printf("30 removal started.\n");
-    tree->delete_key(30);
-    printf("30 removal complete.\n");
     tree->dump_tree();
     delete tree;
 }
